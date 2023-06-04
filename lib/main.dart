@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mine_app/home_page.dart';
 
 void main() {
   runApp(
@@ -7,21 +8,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Container(
-            child: const Text(
-              'Learn Flutter in 8 Hours',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
-        ),
-      ),
-    );
+    return HomePage();
   }
 }
