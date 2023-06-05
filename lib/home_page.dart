@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  int num = 8;
+  final int num = 8;
+  final String name = 'Kaif';
+
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Catelog App'),
+      ),
       body: Center(
-        child: Container(
-          child: Text(
-            'Learn Flutter in $num Hours',
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
+        child: Text(
+          'Learn Flutter in $num Hours by $name',
         ),
       ),
+      drawer: const Drawer(),
     );
   }
 }

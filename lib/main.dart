@@ -3,13 +3,17 @@ import 'package:mine_app/home_page.dart';
 
 void main() {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return HomePage();
+    return const MaterialApp(
+      home: HomePage(),
+    );
   }
 }
