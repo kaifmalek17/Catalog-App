@@ -15,6 +15,11 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Text(
           'Learn Flutter in $num Hours by $name',
+          style: const TextStyle(
+            color: Colors.blue,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       drawer: const Drawer(),
