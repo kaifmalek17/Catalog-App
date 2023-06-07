@@ -52,6 +52,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    // ignore: avoid_print
                     print('Hi From Kaif');
                   },
                   child: const Text('Login'),
