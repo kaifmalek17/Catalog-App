@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mine_app/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   final int num = 8;
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      drawer: const Drawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
