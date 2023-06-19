@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mine_app/models/catelog.dart';
 import 'package:mine_app/widgets/drawer.dart';
+import 'package:mine_app/widgets/item_widget.dart';
 
 class HomePage extends StatelessWidget {
   final int num = 8;
@@ -13,14 +15,15 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Catelog App'),
       ),
-      body: Center(
-        child: Text(
-          'Learn Flutter in $num Hours by $name',
-          style: const TextStyle(
-            color: Colors.blue,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: CatelogModel.items.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: CatelogModel.items[index],
+            );
+          },
         ),
       ),
       drawer: const MyDrawer(),
