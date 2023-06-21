@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     final catelogJson =
         await rootBundle.loadString('assets/files/catelog.json');
     final decodedData = jsonDecode(catelogJson);
@@ -44,6 +44,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
+        // ignore: unnecessary_null_comparison
         child: (CatelogModel.items != null && CatelogModel.items.isNotEmpty)
             ? ListView.builder(
                 itemCount: CatelogModel.items.length,
