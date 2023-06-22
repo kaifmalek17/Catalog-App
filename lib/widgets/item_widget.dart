@@ -4,6 +4,7 @@ import 'package:mine_app/models/catelog.dart';
 class ItemWidget extends StatelessWidget {
   final Item item;
 
+  // ignore: unnecessary_null_comparison
   const ItemWidget({super.key, required this.item}) : assert(item != null);
 
   @override
@@ -11,6 +12,7 @@ class ItemWidget extends StatelessWidget {
     return Card(
       child: ListTile(
         onTap: () {
+          // ignore: avoid_print
           print('${item.name} pressed');
         },
         leading: Image.network(item.image),

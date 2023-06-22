@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:mine_app/models/catelog.dart';
 import 'package:mine_app/widgets/drawer.dart';
+// ignore: unused_import
 import 'package:mine_app/widgets/item_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -46,11 +47,45 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(16.0),
         // ignore: unnecessary_null_comparison
         child: (CatelogModel.items != null && CatelogModel.items.isNotEmpty)
-            ? ListView.builder(
-                itemCount: CatelogModel.items.length,
-                itemBuilder: (context, index) => ItemWidget(
-                  item: CatelogModel.items[index],
+            ? GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  crossAxisCount: 2,
                 ),
+                itemBuilder: (context, index) {
+                  final item = CatelogModel.items[index];
+                  return Card(
+                    clipBehavior: Clip.antiAlias,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: GridTile(
+                      header: Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                          color: Colors.deepPurple,
+                        ),
+                        child: Text(
+                          item.name,
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      footer: Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: const BoxDecoration(
+                          color: Colors.black,
+                        ),
+                        child: Text(
+                          item.price.toString(),
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      child: Image.network(item.image),
+                    ),
+                  );
+                },
+                itemCount: CatelogModel.items.length,
               )
             : const Center(
                 child: CircularProgressIndicator(),
