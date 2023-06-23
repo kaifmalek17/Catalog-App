@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:mine_app/models/catelog.dart';
+import 'package:mine_app/utills/routes.dart';
 import 'package:mine_app/widgets/home_widgets/catelog_header.dart';
 import 'package:mine_app/widgets/home_widgets/catelog_list.dart';
 import 'package:mine_app/widgets/theme.dart';
@@ -42,6 +44,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Mytheme.creamColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+        backgroundColor: Mytheme.darkBluish,
+        child: Icon(CupertinoIcons.cart),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,

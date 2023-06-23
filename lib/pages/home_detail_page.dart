@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mine_app/models/catelog.dart';
-import 'package:mine_app/widgets/home_widgets/catelog_image.dart';
 import 'package:mine_app/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -10,30 +9,27 @@ class HomeDetailPage extends StatelessWidget {
   const HomeDetailPage({super.key, required this.catelog})
       // ignore: unnecessary_null_comparison
       : assert(catelog != null);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.transparent),
       backgroundColor: Mytheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
-          buttonPadding:
-              const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+          buttonPadding: EdgeInsets.zero,
           children: [
-            '\$${catelog.price}'.text.bold.xl4.red800.make(),
+            "\$${catelog.price}".text.bold.xl4.red800.make(),
             ElevatedButton(
-              style: ButtonStyle(
-                padding: MaterialStateProperty.all(const EdgeInsets.all(8)),
-                backgroundColor: MaterialStateProperty.all(Mytheme.darkBluish),
-                shape: MaterialStateProperty.all(
-                  const StadiumBorder(),
-                ),
-              ),
               onPressed: () {},
-              child: 'Buy'.text.make(),
-            ).wh(100, 50),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all(Mytheme.darkBluish),
+                  shape: MaterialStateProperty.all(StadiumBorder())),
+              child: "Add to cart".text.make(),
+            ).wh(120, 50)
           ],
         ).p32(),
       ),
@@ -42,34 +38,31 @@ class HomeDetailPage extends StatelessWidget {
         child: Column(
           children: [
             Hero(
-              tag: Key(
-                catelog.id.toString(),
-              ),
+              tag: Key(catelog.id.toString()),
               child: Image.network(catelog.image),
             ).h32(context),
             Expanded(
-              child: VxArc(
-                height: 30.0,
-                edge: VxEdge.top,
-                arcType: VxArcType.convey,
-                child: Container(
-                  color: Colors.white,
-                  width: context.screenWidth,
-                  child: Column(
-                    children: [
-                      catelog.name.text.xl4
-                          .color(Mytheme.darkBluish)
-                          .bold
-                          .make(),
-                      catelog.desc.text
-                          .textStyle(context.captionStyle)
-                          .xl
-                          .make(),
-                    ],
-                  ).p64(),
-                ),
+                child: VxArc(
+              height: 30.0,
+              arcType: VxArcType.convey,
+              edge: VxEdge.top,
+              child: Container(
+                color: Colors.white,
+                width: context.screenWidth,
+                child: Column(
+                  children: [
+                    catelog.name.text.xl4.color(Mytheme.darkBluish).bold.make(),
+                    catelog.desc.text.textStyle(context.captionStyle).xl.make(),
+                    10.heightBox,
+                    "Dolor sea takimata ipsum sea eirmod aliquyam est. Eos ipsum voluptua eirmod elitr, no dolor dolor amet eirmod dolor labore dolores magna. Amet vero vero vero kasd, dolore sea sed sit invidunt nonumy est sit clita. Diam aliquyam amet tempor diam no aliquyam invidunt. Elitr lorem eirmod dolore clita. Rebum."
+                        .text
+                        .textStyle(context.captionStyle)
+                        .make()
+                        .p16()
+                  ],
+                ).py64(),
               ),
-            ),
+            ))
           ],
         ),
       ),
