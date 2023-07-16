@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mine_app/core/store.dart';
 import 'package:mine_app/pages/cart_page.dart';
 import 'package:mine_app/pages/home_page.dart';
 import 'package:mine_app/pages/login_page.dart';
 import 'package:mine_app/utills/routes.dart';
 import 'package:mine_app/widgets/theme.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
   runApp(
-    const MyApp(),
+    VxState(
+      store: MyStore(), // Use MyStore as the store
+      child: MyApp(),
+    ),
   );
 }
 
