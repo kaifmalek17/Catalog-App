@@ -14,7 +14,7 @@ class CatelogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatelogModel.items.length,
       itemBuilder: (context, index) {
-        final catelog = CatelogModel.items[index];
+        final catelog = CatelogModel.getByPosition(index);
         return InkWell(
           onTap: () => Navigator.push(
             context,
@@ -76,7 +76,7 @@ class CatelogItem extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: 'Buy'.text.make(),
+                      child: "Add to cart".text.make(),
                     ),
                   ],
                 ),
