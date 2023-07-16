@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mine_app/models/cart.dart';
 import 'package:mine_app/models/catelog.dart';
 import 'package:mine_app/pages/home_detail_page.dart';
 import 'package:mine_app/widgets/home_widgets/catelog_image.dart';
@@ -65,20 +66,7 @@ class CatelogItem extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 20),
                   children: [
                     '\$${catelog.price}'.text.bold.xl.make(),
-                    ElevatedButton(
-                      style: ButtonStyle(
-                        padding: MaterialStateProperty.all(
-                          const EdgeInsets.all(8),
-                        ),
-                        backgroundColor:
-                            MaterialStateProperty.all(Mytheme.darkBluish),
-                        shape: MaterialStateProperty.all(
-                          const StadiumBorder(),
-                        ),
-                      ),
-                      onPressed: () {},
-                      child: "Add to cart".text.make(),
-                    ),
+                    _AddToCart(catelog: catelog),
                   ],
                 ),
               ],
@@ -87,5 +75,40 @@ class CatelogItem extends StatelessWidget {
         ],
       ),
     ).white.rounded.square(150).make().py16();
+  }
+}
+
+class _AddToCart extends StatefulWidget {
+  final Item catelog;
+  const _AddToCart({super.key, required this.catelog});
+
+  @override
+  State<_AddToCart> createState() => __AddToCartState();
+}
+
+class __AddToCartState extends State<_AddToCart> {
+  bool isAdded = false;
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(
+          const EdgeInsets.all(8),
+        ),
+        backgroundColor: MaterialStateProperty.all(Mytheme.darkBluish),
+        shape: MaterialStateProperty.all(
+          const StadiumBorder(),
+        ),
+      ),
+      onPressed: () {
+        isAdded = isAdded.toggle();
+        final _catelog = CatelogModel();
+        final _cart = CartModel();
+        _cart.catelog = _catelog;
+        _cart.add(widget.catelog);
+        setState(() {});
+      },
+      child: isAdded ? Icon(Icons.done) : "Add to cart".text.make(),
+    );
   }
 }
