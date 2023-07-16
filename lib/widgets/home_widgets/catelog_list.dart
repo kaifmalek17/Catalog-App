@@ -67,8 +67,9 @@ class CatelogItem extends StatelessWidget {
                     '\$${catelog.price}'.text.bold.xl.make(),
                     ElevatedButton(
                       style: ButtonStyle(
-                        padding:
-                            MaterialStateProperty.all(const EdgeInsets.all(8)),
+                        padding: MaterialStateProperty.all(
+                          const EdgeInsets.all(8),
+                        ),
                         backgroundColor:
                             MaterialStateProperty.all(Mytheme.darkBluish),
                         shape: MaterialStateProperty.all(
