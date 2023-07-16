@@ -12,7 +12,7 @@ class AddToCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VxStateProvider.watch(context, on: [AddMutation]);
+    VxState.watch(context, on: [AddMutation, RemoveMutation]);
     final CartModel _cart = (VxState.store as MyStore).cart;
     bool isInCart = _cart.items.contains(catelog) ?? false;
     return ElevatedButton(
@@ -33,8 +33,4 @@ class AddToCart extends StatelessWidget {
       child: isInCart ? Icon(Icons.done) : Icon(CupertinoIcons.cart_badge_plus),
     );
   }
-}
-
-class VxStateProvider {
-  static void watch(BuildContext context, {required List<Type> on}) {}
 }
