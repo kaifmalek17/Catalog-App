@@ -1,5 +1,5 @@
 # Catalog App Project in Flutter
-
+ 
 ![Catalog App Project]
 
 The Catalog App is a highly efficient mini e-commerce application developed in Flutter. It provides users with the ability to purchase smart gadgets. The app encompasses end-to-end UI design, data management, model implementation, and state management, resulting in a seamless user experience.
