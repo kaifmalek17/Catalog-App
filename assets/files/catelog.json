@@ -1,0 +1,68 @@
+{
+    "products" : [
+        {
+            "id": 1,
+            "name": "iPhone 12 Pro",
+            "desc": "Apple iPhone 12th generation",
+            "price": 999,
+            "color": "#33505a",
+            "image": "https://www.smartcellular.in/media/catalog/product/cache/cfaa1692031f009488d1cfea5ce7e1ee/a/p/apple-iphone-12-pro-max-dummyapplefsn-original-imafwgcyhmzhaapd_1.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Pixel 5",
+            "desc": "Google Pixel phone 5th generation",
+            "price": 699,
+            "color": "#00ac51",
+            "image": "https://m.media-amazon.com/images/I/513w-Nev-OL.jpg"
+        },
+        {
+            "id": 3,
+            "name": "M1 Macbook Air",
+            "desc": "Apple Macbook Air with apple",
+            "price": 1099,
+            "color": "#e0bfae",
+            "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1664472289661"
+        },
+        {
+            "id": 4,
+            "name": "Playstation 5",
+            "desc": "Sony Playstation 5th generation",
+            "price": 500,
+            "color": "#544ee4",
+            "image": "https://i.gadgets360cdn.com/products/large/sony-ps5-649x800-1592631239.jpeg?downsize=*:360"
+        },
+        {
+            "id": 5,
+            "name": "Airpods Pro",
+            "desc": "Apple Airpods 1st generation",
+            "price": 200,
+            "color": "#e3e4e9",
+            "image": "https://www.mgviplounge.com/wp-content/uploads/2019/12/Airpods-Pro.jpg"
+        },
+        {
+            "id": 6,
+            "name": "iPad Pro",
+            "desc": "Apple iPad Pro 2020 edition",
+            "price": 799,
+            "color": "#f73984",
+            "image": "https://fdn2.mobgsm.com/vv/bigpic/apple-ipad-pro-11-2020.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Galaxy S21 Ultra",
+            "desc": "Samsung Galaxy S21 Ultra 2021 edition",
+            "price": 1299,
+            "color": "#1c1c1c",
+            "image": "https://www.91-img.com/pictures/140546-v6-samsung-galaxy-s21-ultra-mobile-phone-large-2.jpg?tr=h-271,c-at_max,q-60"
+        },
+        {
+            "id": 8,
+            "name": "Galaxy S21",
+            "desc": "Samsung Galaxy S21 2021 edition",
+            "price": 899,
+            "color": "#7c95eb",
+            "image": "https://cdn1.smartprix.com/rx-ii3Pn8ry8-w1200-h1200/i3Pn8ry8.jpg"
+        }
+    ]
+}
