@@ -1,5 +1,3 @@
-# mine_app
-
 # Catalog App Project in Flutter
 
 ![Catalog App Project]
